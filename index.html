@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Weather Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>🌍 World Weather Tracker</h1>
+        <p>Clouds, temperatures, and the next 3 days for major cities around the world.</p>
+      </header>
+
+      <section class="controls">
+        <label for="city-picker">Choose a city:</label>
+        <select id="city-picker" aria-label="Select city"></select>
+        <button id="refresh-btn" type="button">Refresh</button>
+      </section>
+
+      <section id="current" class="panel" aria-live="polite"></section>
+
+      <section>
+        <h2>3-Day Forecast</h2>
+        <div id="forecast" class="forecast-grid" aria-live="polite"></div>
+      </section>
+
+      <section>
+        <h2>Global Quick View</h2>
+        <div id="world-grid" class="world-grid" aria-live="polite"></div>
+      </section>
+
+      <p id="status" class="status"></p>
+    </main>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
