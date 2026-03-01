@@ -1,0 +1,89 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0b1220;
+  --card: #1a2438;
+  --text: #e8eefc;
+  --accent: #62c7ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1f3359, var(--bg));
+  color: var(--text);
+}
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+header h1 {
+  margin-bottom: 0.35rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+select,
+button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #3d516e;
+  background: #10182a;
+  color: var(--text);
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(180deg, #1e82d2, #1564a2);
+  border: none;
+}
+
+.panel,
+.world-card,
+.day-card {
+  background: color-mix(in oklab, var(--card), black 8%);
+  border: 1px solid #2c3e5d;
+  border-radius: 0.75rem;
+  padding: 0.9rem;
+}
+
+.forecast-grid,
+.world-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.forecast-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
+.world-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+h2 {
+  margin-top: 1.2rem;
+}
+
+.status {
+  min-height: 1.2em;
+  opacity: 0.8;
+}
+
+@media (max-width: 550px) {
+  .app {
+    padding: 0.8rem;
+  }
+}
