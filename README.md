@@ -22,3 +22,18 @@ Use the following values in hosting dashboards that request them:
 - **Publish Directory:** `.`
 
 A `netlify.toml` is included with these values for Netlify-compatible deployments.
+
+## Render deployment (fixes "Not Found")
+
+If you deploy on Render, create a **Static Site** (or use the included `render.yaml`) with:
+
+- **Build Command:** `echo "No build step required for this static site"`
+- **Publish Directory:** `.`
+
+If you still see `Not Found`, it usually means the service was created as the wrong type or route handling is missing. The included `render.yaml` configures:
+
+- `runtime: static`
+- `staticPublishPath: .`
+- a rewrite from `/*` to `/index.html`
+
+These settings make sure Render serves the app entry page correctly.
